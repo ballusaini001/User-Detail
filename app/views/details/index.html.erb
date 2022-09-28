@@ -1,0 +1,58 @@
+<% if user_signed_in? %>
+
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Caste</th>
+      <th>Age</th>
+      <th>Height in cms</th>
+      <th>Weight in kgs</th>
+      <th>Phone no</th>
+      <th>Email</th>
+      
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @details.each do |detail| %>
+      <% if detail.user == current_user %>
+      <tr>
+        <td>
+          <%= link_to detail.First_name  + ' ' + detail.Last_name, detail %>
+
+          <%=  %>
+          </td>
+        <td><%= detail.Caste %></td>
+        <td><%= detail.Age %></td>
+        <td><%= detail.Height_in_CMs %></td>
+        <td><%= detail.Weight_in_KGs %></td>
+        <td><%= detail.Phone_no %></td>
+        <td><%= detail.Email %></td>
+       
+        <td><%= link_to 'Delete', detail, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-outline-danger btn-sm" %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New User', new_detail_path,class:"btn btn-dark" %>
+
+<% else %>
+
+<div class="alert alert-success" role="alert">
+  <h1> Hello Mr./Mrs.  !!!!!</h1>
+</div>
+<br/>
+<div class="alert alert-danger" role="alert">
+  <h4> please sign in with correct details to show you saved details otherwise sign up for new account.</h4>
+  </div>
+<br/>
+ <%= image_tag "signup.png", height: 280 %>
+
+
+<% end %>

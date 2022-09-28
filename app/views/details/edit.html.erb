@@ -1,0 +1,10 @@
+<h1>Editing User Detail</h1>
+
+<%= render 'form', detail: @detail %>
+
+<br/>
+<%= link_to 'Show', @detail,class:"btn btn-primary btn-info" %> 
+
+<%= link_to 'Delete', @detail, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %>
+
+<%= link_to 'Back', details_path,class:"btn btn-warning" %>

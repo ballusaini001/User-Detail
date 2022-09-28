@@ -1,0 +1,44 @@
+<div class="jumbotron">
+  <h1 class="display-4">
+  <%= @detail.First_name %>
+  <%= @detail.Last_name %>
+  </h1>
+  <p class="lead">
+<p>
+  <strong>Caste:</strong>
+  <%= @detail.Caste %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @detail.Age %>
+</p>
+
+<p>
+  <strong>Height in cms:</strong>
+  <%= @detail.Height_in_CMs %>
+</p>
+
+<p>
+  <strong>Weight in kgs:</strong>
+  <%= @detail.Weight_in_KGs %>
+</p>
+  <hr class="my-4">
+  <p><p>
+  <strong>Phone no:</strong>
+  <%= @detail.Phone_no %>
+</p>
+
+<p>
+  <strong>Email Id:</strong>
+  <%= @detail.Email %>
+</p></p>
+
+<br/>
+
+<%= link_to 'Edit', edit_detail_path(@detail),class:"btn btn-primary btn-sm" %> 
+<%= link_to 'Delete', @detail, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger btn-sm" %>
+
+<%= link_to 'Back', details_path,class:"btn btn-warning btn-sm" %>
+
+</div>

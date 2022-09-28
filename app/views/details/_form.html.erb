@@ -1,0 +1,59 @@
+<%= form_with(model: detail) do |form| %>
+  <% if detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(detail.errors.count, "error") %> prohibited this detail from being saved:</h2>
+
+      <ul>
+        <% detail.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <% form.label :First_name %>
+    <%= form.text_field :First_name,class:"form-control",placeholder:"First Name" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :Last_name %>
+    <%= form.text_field :Last_name,class:"form-control",placeholder:"Last Name" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :Caste %>
+    <%= form.text_field :Caste,class:"form-control",placeholder:"Caste" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :Age %>
+    <%= form.number_field :Age,class:"form-control",placeholder:"Age in Years" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :Height_in_CMs %>
+    <%= form.text_field :Height_in_CMs,class:"form-control",placeholder:"Height in Centimeters" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :Weight_in_KGs %>
+    <%= form.text_field :Weight_in_KGs,class:"form-control",placeholder:"Weight in KGs" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :Phone_no %>
+    <%= form.text_field :Phone_no,class:"form-control",placeholder:"Phone Number" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :Email %>
+    <%= form.text_field :Email,class:"form-control",placeholder:"Email Id" %>
+  </div>
+  <%= form.number_field :user_id, id: :detail_user_id,class: "form-control", value:current_user.id, type: :hidden %>
+<br/>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
